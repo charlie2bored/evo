@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&family=Anton&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  * {
+    border-color: inherit;
+  }
+
+  ::selection {
+    background: #F02D09;
+    color: white;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-impact {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  /* Neon glow effects */
+  .neon-red {
+    text-shadow: 0 0 10px #F02D09, 0 0 20px #F02D09, 0 0 40px #F02D09;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(240, 45, 9, 0.5), 0 0 40px rgba(240, 45, 9, 0.3);
+  }
+
+  .neon-border {
+    box-shadow: inset 0 0 20px rgba(240, 45, 9, 0.1), 0 0 20px rgba(240, 45, 9, 0.3);
+  }
+
+  /* Kinetic text animation */
+  @keyframes kinetic-slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes kinetic-pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.02); }
+  }
+
+  .kinetic-text {
+    animation: kinetic-slide 20s linear infinite;
+  }
+
+  .kinetic-text-alt {
+    animation: kinetic-slide 25s linear infinite reverse;
+  }
+
+  /* Jersey Club specific animations */
+  @keyframes jersey-bounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(1deg); }
+    75% { transform: translateY(5px) rotate(-1deg); }
+  }
+
+  @keyframes neon-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  .jersey-bounce {
+    animation: jersey-bounce 2s ease-in-out infinite;
+  }
+
+  .neon-flicker {
+    animation: neon-flicker 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-evo-red text-white font-bold py-4 px-10 uppercase tracking-wider hover:bg-white hover:text-black transform hover:scale-105 transition-all duration-300 relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-white transform scale-x-0 origin-left transition-transform duration-300;
+  }
+
+  .btn-primary:hover::before {
+    @apply scale-x-100;
+  }
+
+  .btn-primary span {
+    @apply relative z-10;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-white text-white font-bold py-4 px-10 uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300;
+  }
+
+  .btn-neon {
+    @apply bg-transparent border-2 border-evo-red text-evo-red font-bold py-4 px-10 uppercase tracking-wider transition-all duration-300;
+    box-shadow: 0 0 20px rgba(240, 45, 9, 0.3), inset 0 0 20px rgba(240, 45, 9, 0.1);
+  }
+
+  .btn-neon:hover {
+    @apply bg-evo-red text-white;
+    box-shadow: 0 0 40px rgba(240, 45, 9, 0.6);
+  }
+
+  /* Layout */
+  .section-padding {
+    @apply py-24 px-6 md:px-12 lg:px-20;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  /* Cards */
+  .card-hover {
+    @apply transition-all duration-500 hover:translate-y-[-8px];
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 30px rgba(240, 45, 9, 0.4);
+  }
+
+  /* Video overlay */
+  .video-overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.9) 100%);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #F02D09;
+    border-radius: 4px;
+  }
+
+  /* Grid pattern */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(240, 45, 9, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(240, 45, 9, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
