@@ -1,4 +1,5 @@
 import Team from '../components/Team'
+import { TheaterIcon } from '../components/Icons'
 
 const TeamPage = () => {
   return (
@@ -18,7 +19,7 @@ const TeamPage = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8">
               <div className="w-20 h-20 mx-auto mb-6 bg-evo-red flex items-center justify-center">
-                <span className="text-3xl">🎭</span>
+<TheaterIcon className="w-12 h-12" />
               </div>
               <h3 className="font-display text-2xl text-white mb-4">Professional Talent</h3>
               <p className="text-gray-400">

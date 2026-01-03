@@ -1,4 +1,5 @@
 import Hero from '../components/Hero'
+import { DanceIcon, DJIcon, VideoIcon, SocialIcon, CateringIcon, PackageIcon } from '../components/Icons'
 import { Link } from 'react-router-dom'
 
 // Import shop products data
@@ -95,15 +96,15 @@ const Home = () => {
 
           <div className="flex flex-wrap justify-center gap-8">
             {[
-              { name: "Performance", icon: "💃", desc: "Professional dance performances that electrify any event" },
-              { name: "DJ Services", icon: "🎧", desc: "Expert DJs with extensive music libraries keeping your party alive" },
-              { name: "Video<br />Graphy", icon: "📹", desc: "Cinematic video production capturing every moment of your special event" },
-              { name: "Social<br />Media", icon: "📱", desc: "Strategic promotion to amplify your event's reach and engagement online" },
-              { name: "Catering", icon: "🍽️", desc: "Delicious food service with diverse menus tailored to your event's needs" },
-              { name: "Full Package", icon: "✨", desc: "Complete event solutions combining all our services for seamless entertainment" }
+              { name: "Performance", icon: <DanceIcon className="w-16 h-16" />, desc: "Professional dance performances that electrify any event" },
+              { name: "DJ Services", icon: <DJIcon className="w-16 h-16" />, desc: "Expert DJs with extensive music libraries keeping your party alive" },
+              { name: "Video<br />Graphy", icon: <VideoIcon className="w-16 h-16" />, desc: "Cinematic video production capturing every moment of your special event" },
+              { name: "Social<br />Media", icon: <SocialIcon className="w-16 h-16" />, desc: "Strategic promotion to amplify your event's reach and engagement online" },
+              { name: "Catering", icon: <CateringIcon className="w-16 h-16" />, desc: "Delicious food service with diverse menus tailored to your event's needs" },
+              { name: "Full Package", icon: <PackageIcon className="w-16 h-16" />, desc: "Complete event solutions combining all our services for seamless entertainment" }
             ].map((service, index) => (
               <div key={index} className="group bg-black p-8 rounded-lg hover:bg-white transition-colors w-80">
-                <div className="text-5xl mb-4">{service.icon}</div>
+                <div className="mb-4 flex justify-center">{service.icon}</div>
                 <h3 className="text-2xl font-bold text-white group-hover:text-black mb-4" dangerouslySetInnerHTML={{__html: service.name}}></h3>
                 <p className="text-gray-400 group-hover:text-gray-800 mb-6">{service.desc}</p>
                 <Link to="/bookings" className="text-red-600 group-hover:text-red-700 font-bold uppercase tracking-wider">

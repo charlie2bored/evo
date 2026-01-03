@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { DanceIcon, DJIcon, VideoIcon, SocialIcon, CateringIcon, PackageIcon } from './Icons'
 
 const Services = () => {
   const services = [
@@ -6,42 +7,42 @@ const Services = () => {
       name: "Performance",
       subtitle: "Dance Crew",
       description: "Professional dance performances that electrify any event. Hip-hop, contemporary, and cultural routines.",
-      icon: "💃",
+      icon: <DanceIcon className="w-12 h-12" />,
       features: ["Custom Choreography", "Group Performances", "Solo Acts"]
     },
     {
       name: "DJ Services",
       subtitle: "Atmosphere",
       description: "Expert DJs with extensive music libraries keeping your party alive all night long.",
-      icon: "🎧",
+      icon: <DJIcon className="w-12 h-12" />,
       features: ["Live Mixing", "MC Services", "Sound Equipment"]
     },
     {
       name: "Videography",
       subtitle: "Media",
       description: "Cinematic video production capturing every moment of your special event.",
-      icon: "📹",
+      icon: <VideoIcon className="w-12 h-12" />,
       features: ["4K Recording", "Drone Shots", "Same-Day Edits"]
     },
     {
       name: "Social<br />Media",
       subtitle: "Hype",
       description: "Strategic promotion to amplify your event's reach and engagement online.",
-      icon: "📱",
+      icon: <SocialIcon className="w-12 h-12" />,
       features: ["Event Promo", "Live Coverage", "Content Creation"]
     },
     {
       name: "Catering",
       subtitle: "Atmosphere",
       description: "Delicious food service with diverse menus tailored to your event's needs.",
-      icon: "🍽️",
+      icon: <CateringIcon className="w-12 h-12" />,
       features: ["Custom Menus", "Full Service", "Bar Options"]
     },
     {
       name: "Full Package",
       subtitle: "All-In-One",
       description: "Complete event solutions combining all our services for seamless entertainment.",
-      icon: "✨",
+      icon: <PackageIcon className="w-12 h-12" />,
       features: ["Everything Included", "Event Planning", "Coordination"]
     }
   ]

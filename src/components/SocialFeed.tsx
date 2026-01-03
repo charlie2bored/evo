@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { InstagramIcon, YouTubeIcon, TikTokIcon } from './Icons'
 
 interface SocialPost {
   id: string
@@ -24,7 +25,7 @@ const SocialFeed = () => {
         platform: 'instagram',
         type: 'video',
         content: 'Behind the scenes at the Jersey Club showcase! 🔥 #TheClanOfEvolution #JerseyClub',
-        thumbnail: '📸',
+        thumbnail: <InstagramIcon className="w-6 h-6" />,
         url: 'https://instagram.com/p/mock1',
         views: 2500,
         timestamp: '2h ago'
@@ -34,7 +35,7 @@ const SocialFeed = () => {
         platform: 'youtube',
         type: 'video',
         content: 'Evolution Dance Crew - Summer Shutdown 2024 Official Recap',
-        thumbnail: '🎬',
+        thumbnail: <YouTubeIcon className="w-6 h-6" />,
         url: 'https://youtube.com/watch?v=mock1',
         views: 12500,
         timestamp: '1d ago'
@@ -44,7 +45,7 @@ const SocialFeed = () => {
         platform: 'tiktok',
         type: 'video',
         content: 'POV: You\'re at an Evolution party 🕺💃 #PartyVibes #Evolution',
-        thumbnail: '📱',
+        thumbnail: <TikTokIcon className="w-6 h-6" />,
         url: 'https://tiktok.com/@mock1',
         likes: 8900,
         timestamp: '4h ago'
@@ -54,7 +55,7 @@ const SocialFeed = () => {
         platform: 'instagram',
         type: 'image',
         content: 'New merch drop! Get yours before they\'re gone 👕 #GrowTheCulture',
-        thumbnail: '👕',
+        thumbnail: <InstagramIcon className="w-6 h-6" />,
         url: 'https://instagram.com/p/mock2',
         likes: 1200,
         timestamp: '6h ago'
@@ -64,7 +65,7 @@ const SocialFeed = () => {
         platform: 'youtube',
         type: 'video',
         content: 'Client Spotlight: Wedding Reception at Club Evolution',
-        thumbnail: '💒',
+        thumbnail: <YouTubeIcon className="w-6 h-6" />,
         url: 'https://youtube.com/watch?v=mock2',
         views: 3200,
         timestamp: '2d ago'
@@ -74,7 +75,7 @@ const SocialFeed = () => {
         platform: 'tiktok',
         type: 'video',
         content: 'Dance tutorial: Basic Jersey Club moves 💃 #LearnToDance',
-        thumbnail: '🕺',
+        thumbnail: <TikTokIcon className="w-6 h-6" />,
         url: 'https://tiktok.com/@mock2',
         likes: 15400,
         timestamp: '8h ago'
@@ -90,10 +91,10 @@ const SocialFeed = () => {
 
   const getPlatformIcon = (platform: string) => {
     switch (platform) {
-      case 'instagram': return '📸'
-      case 'youtube': return '📺'
-      case 'tiktok': return '🎵'
-      default: return '📱'
+      case 'instagram': return <InstagramIcon className="w-4 h-4" />
+      case 'youtube': return <YouTubeIcon className="w-4 h-4" />
+      case 'tiktok': return <TikTokIcon className="w-4 h-4" />
+      default: return <InstagramIcon className="w-4 h-4" />
     }
   }
 
@@ -174,9 +175,9 @@ const SocialFeed = () => {
       {/* Social Links */}
       <div className="flex justify-center gap-6 pt-6 border-t border-white/10">
         {[
-          { name: 'Instagram', handle: '@theclanofevolution', icon: '📸', url: 'https://instagram.com/theclanofevolution' },
-          { name: 'TikTok', handle: '@evolve.crew', icon: '🎵', url: 'https://tiktok.com/@evolve.crew' },
-          { name: 'YouTube', handle: 'Evolution TV', icon: '📺', url: 'https://youtube.com/@evolutiontv' },
+          { name: 'Instagram', handle: '@theclanofevolution', icon: <InstagramIcon className="w-5 h-5" />, url: 'https://instagram.com/theclanofevolution' },
+          { name: 'TikTok', handle: '@evolve.crew', icon: <TikTokIcon className="w-5 h-5" />, url: 'https://tiktok.com/@evolve.crew' },
+          { name: 'YouTube', handle: 'Evolution TV', icon: <YouTubeIcon className="w-5 h-5" />, url: 'https://youtube.com/@evolutiontv' },
         ].map((social) => (
           <a
             key={social.name}

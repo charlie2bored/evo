@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { VideoIcon } from '../components/Icons'
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('upcoming')
@@ -10,7 +11,7 @@ const Gallery = () => {
       date: "Aug 15, 2024",
       location: "Newark, NJ",
       type: "Party",
-      image: "🎉"
+      image: "/images/gallery/event1.jpg"
     },
     {
       id: 2,
@@ -18,7 +19,7 @@ const Gallery = () => {
       date: "Aug 22, 2024",
       location: "Brooklyn, NY",
       type: "Club Night",
-      image: "🎧"
+      image: "/images/gallery/event2.jpg"
     },
     {
       id: 3,
@@ -26,7 +27,7 @@ const Gallery = () => {
       date: "Sep 5, 2024",
       location: "Philadelphia, PA",
       type: "Festival",
-      image: "🎭"
+      image: "/images/gallery/event3.jpg"
     }
   ]
 
@@ -36,28 +37,28 @@ const Gallery = () => {
       title: "Spring Break Bash",
       date: "Mar 2024",
       views: "50K",
-      image: "📸"
+      image: "/images/gallery/video1.jpg"
     },
     {
       id: 2,
       title: "Winter Wonderland Party",
       date: "Dec 2023",
       views: "35K",
-      image: "📸"
+      image: "/images/gallery/video2.jpg"
     },
     {
       id: 3,
       title: "Halloween Takeover",
       date: "Oct 2023",
       views: "45K",
-      image: "📸"
+      image: "/images/gallery/video3.jpg"
     },
     {
       id: 4,
       title: "Summer Vibes 2023",
       date: "Jul 2023",
       views: "60K",
-      image: "📸"
+      image: "/images/gallery/video4.jpg"
     }
   ]
 
@@ -215,7 +216,7 @@ const Gallery = () => {
             <div className="aspect-video bg-evo-gray mb-8 relative overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <span className="text-6xl opacity-30">🎬</span>
+                  <VideoIcon className="text-6xl opacity-30" />
                   <p className="text-white/40 mt-4">Featured Video Player</p>
                 </div>
               </div>
@@ -237,7 +238,7 @@ const Gallery = () => {
                 >
                   <div className="aspect-video bg-evo-gray mb-3 relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity">
-                      <span className="text-4xl">🎬</span>
+                      <VideoIcon className="text-4xl" />
                     </div>
                     <div className="absolute bottom-2 right-2 bg-black/80 px-2 py-1 text-xs text-white">
                       {video.duration}

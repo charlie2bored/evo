@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { DanceIcon, DJIcon, VideoIcon, SocialIcon, CateringIcon, PackageIcon } from '../components/Icons'
 
 const Bookings = () => {
   const [step, setStep] = useState(1)
@@ -19,42 +20,42 @@ const Bookings = () => {
       id: 'performance',
       name: 'Performance Team',
       description: 'Professional dance crew for your event',
-      icon: '💃',
+      icon: <DanceIcon className="w-12 h-12" />,
       price: 'From $500'
     },
     {
       id: 'dj',
       name: 'DJ Services',
       description: 'Live mixing and sound equipment',
-      icon: '🎧',
+      icon: <DJIcon className="w-12 h-12" />,
       price: 'From $300'
     },
     {
       id: 'videography',
       name: 'Video<br />Graphy',
       description: 'Professional event coverage and editing',
-      icon: '📹',
+      icon: <VideoIcon className="w-12 h-12" />,
       price: 'From $400'
     },
     {
       id: 'social',
       name: 'Social<br />Media',
       description: 'Event promotion and live coverage',
-      icon: '📱',
+      icon: <SocialIcon className="w-12 h-12" />,
       price: 'From $200'
     },
     {
       id: 'catering',
       name: 'Catering',
       description: 'Food and beverage service',
-      icon: '🍽️',
+      icon: <CateringIcon className="w-12 h-12" />,
       price: 'From $500'
     },
     {
       id: 'full',
       name: 'Full Package',
       description: 'Complete entertainment solution',
-      icon: '✨',
+      icon: <PackageIcon className="w-12 h-12" />,
       price: 'Custom<br />Quote'
     }
   ]

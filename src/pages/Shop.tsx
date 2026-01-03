@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../contexts/CartContext'
+import { CreditCardIcon, ApplePayIcon, GooglePayIcon, CashAppIcon } from '../components/Icons'
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -412,19 +413,19 @@ const Shop = () => {
 
           <div className="flex flex-wrap justify-center items-center gap-6 text-white/60">
             <div className="flex items-center gap-2 px-4 py-3 bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
-              <span className="text-2xl">💳</span>
+              <CreditCardIcon className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Card</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-3 bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
-              <span className="text-2xl">📱</span>
+              <ApplePayIcon className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Apple Pay</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-3 bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
-              <span className="text-2xl">🎯</span>
+              <GooglePayIcon className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Google Pay</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-3 bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
-              <span className="text-2xl">$</span>
+              <CashAppIcon className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">CashApp</span>
             </div>
           </div>

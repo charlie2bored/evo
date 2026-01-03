@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { DanceIcon, DJIcon, VideoIcon } from './Icons'
 
 const About = () => {
   return (
@@ -15,7 +16,7 @@ const About = () => {
               <div className="space-y-4">
                 <div className="aspect-[4/5] bg-evo-gray relative overflow-hidden group">
                   <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-40 group-hover:scale-110 transition-transform">
-                    💃
+<DanceIcon className="w-24 h-24" />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                     <span className="text-evo-red text-xs uppercase tracking-wider font-bold">Performance</span>
@@ -29,7 +30,7 @@ const About = () => {
               <div className="space-y-4 mt-8">
                 <div className="aspect-square bg-evo-gray relative overflow-hidden group">
                   <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-40 group-hover:scale-110 transition-transform">
-                    🎧
+<DJIcon className="w-24 h-24" />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                     <span className="text-evo-red text-xs uppercase tracking-wider font-bold">DJ</span>
@@ -37,7 +38,7 @@ const About = () => {
                 </div>
                 <div className="aspect-[4/5] bg-evo-gray relative overflow-hidden group">
                   <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-40 group-hover:scale-110 transition-transform">
-                    📹
+<VideoIcon className="w-24 h-24" />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                     <span className="text-evo-red text-xs uppercase tracking-wider font-bold">Video</span>

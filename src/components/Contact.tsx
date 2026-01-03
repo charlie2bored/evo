@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { EmailIcon, PhoneIcon, LocationIcon } from './Icons'
 
 interface ContactProps {
   standalone?: boolean
@@ -47,7 +48,7 @@ const Contact = ({ standalone = false }: ContactProps) => {
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-evo-red flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl">📧</span>
+                  <EmailIcon className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">Email Us</h4>
@@ -57,7 +58,7 @@ const Contact = ({ standalone = false }: ContactProps) => {
 
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-evo-red flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl">📞</span>
+                  <PhoneIcon className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">Call Us</h4>
@@ -67,7 +68,7 @@ const Contact = ({ standalone = false }: ContactProps) => {
 
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-evo-red flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl">📍</span>
+                  <LocationIcon className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">Location</h4>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../contexts/CartContext'
+import { ShoppingCartIcon, CreditCardIcon, ApplePayIcon, GooglePayIcon, CashAppIcon } from '../components/Icons'
 
 const Cart = () => {
   const { items, removeFromCart, updateQuantity, getTotal, clearCart } = useCart()
@@ -20,7 +21,9 @@ const Cart = () => {
     return (
       <div className="min-h-screen bg-black pt-24">
         <div className="container-max py-20 text-center">
-          <div className="text-8xl mb-8">🛒</div>
+          <div className="mb-8 flex justify-center">
+            <ShoppingCartIcon className="w-24 h-24" />
+          </div>
           <h1 className="font-impact text-4xl text-white mb-4">Your Cart is Empty</h1>
           <p className="text-white/60 mb-8">Looks like you haven't added anything to your cart yet.</p>
           <Link to="/shop">
@@ -129,10 +132,10 @@ const Cart = () => {
               <h4 className="text-white font-bold mb-4">Payment Method</h4>
               <div className="space-y-2">
                 {[
-                  { id: 'card', name: '💳 Credit/Debit Card', desc: 'Visa, Mastercard, Amex' },
-                  { id: 'apple', name: '📱 Apple Pay', desc: 'Touch/Click to pay' },
-                  { id: 'google', name: '🎯 Google Pay', desc: 'Fast checkout' },
-                  { id: 'cashapp', name: '💵 Cash App', desc: 'Pay with Cash App' }
+                  { id: 'card', name: <><CreditCardIcon className="w-5 h-5 inline mr-2" />Credit/Debit Card</>, desc: 'Visa, Mastercard, Amex' },
+                  { id: 'apple', name: <><ApplePayIcon className="w-5 h-5 inline mr-2" />Apple Pay</>, desc: 'Touch/Click to pay' },
+                  { id: 'google', name: <><GooglePayIcon className="w-5 h-5 inline mr-2" />Google Pay</>, desc: 'Fast checkout' },
+                  { id: 'cashapp', name: <><CashAppIcon className="w-5 h-5 inline mr-2" />Cash App</>, desc: 'Pay with Cash App' }
                 ].map((method) => (
                   <button
                     key={method.id}

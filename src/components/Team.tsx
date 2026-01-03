@@ -43,8 +43,8 @@ const Team = ({ standalone = false }: TeamProps) => {
     },
     {
       name: "Riyaa",
-      role: "Event Coordinator & Catering Lead",
-      credits: "Full-Service Event Planning & Catering",
+      role: "Role Here",
+      credits: "Credits Here",
       image: "/images/team/member06.jpg",
       social: "@5starrr.riyaa"
     },
@@ -56,56 +56,56 @@ const Team = ({ standalone = false }: TeamProps) => {
       social: "@itspoppingdija"
     },
     {
-      name: "Team Member Name",
+      name: "Moody",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member08.jpg",
       social: "@team.member8"
     },
     {
-      name: "Team Member Name",
+      name: "Boogz",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member09.jpg",
       social: "@team.member8"
     },
     {
-      name: "Team Member Name",
+      name: "Bria",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member10.jpg",
       social: "@team.member8"
     },
     {
-      name: "Team Member Name",
+      name: "Greg",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member11.jpg",
       social: "@team.member8"
     },
     {
-      name: "Team Member Name",
+      name: "Eboni",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member12.jpg",
       social: "@team.member8"
     },
     {
-      name: "Team Member Name",
+      name: "Mel Mel",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member13.jpg",
       social: "@team.member8"
     },
     {
-      name: "Team Member Name",
+      name: "Sadi",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member14.jpg",
       social: "@team.member8"
     },
     {
-      name: "Team Member Name",
+      name: "Yaee",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member15.jpg",
