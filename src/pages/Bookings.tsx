@@ -31,7 +31,7 @@ const Bookings = () => {
     },
     {
       id: 'videography',
-      name: 'Videography',
+      name: 'Video<br />Graphy',
       description: 'Professional event coverage and editing',
       icon: '📹',
       price: 'From $400'
@@ -48,7 +48,7 @@ const Bookings = () => {
       name: 'Full Package',
       description: 'Complete entertainment solution',
       icon: '✨',
-      price: 'Custom Quote'
+      price: 'Custom<br />Quote'
     }
   ]
 
@@ -141,12 +141,11 @@ const Bookings = () => {
                   }`}
                 >
                   <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="font-impact text-2xl text-white mb-2">{service.name}</h3>
+                  <h3 className="font-impact text-2xl text-white mb-2" dangerouslySetInnerHTML={{__html: service.name}}></h3>
                   <p className={`text-sm mb-4 ${selectedServices.includes(service.id) ? 'text-white/80' : 'text-white/40'}`}>
                     {service.description}
                   </p>
-                  <div className={`font-bold ${selectedServices.includes(service.id) ? 'text-white' : 'text-evo-red'}`}>
-                    {service.price}
+                  <div className={`font-bold ${selectedServices.includes(service.id) ? 'text-white' : 'text-evo-red'}`} dangerouslySetInnerHTML={{__html: service.price}}>
                   </div>
                   
                   {/* Checkbox indicator */}

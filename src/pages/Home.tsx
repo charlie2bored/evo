@@ -97,13 +97,13 @@ const Home = () => {
             {[
               { name: "Performance", icon: "💃", desc: "Professional dance performances that electrify any event" },
               { name: "DJ Services", icon: "🎧", desc: "Expert DJs with extensive music libraries keeping your party alive" },
-              { name: "Videography", icon: "📹", desc: "Cinematic video production capturing every moment of your special event" },
+              { name: "Video<br />Graphy", icon: "📹", desc: "Cinematic video production capturing every moment of your special event" },
               { name: "Social Media", icon: "📱", desc: "Strategic promotion to amplify your event's reach and engagement online" },
               { name: "Full Package", icon: "✨", desc: "Complete event solutions combining all our services for seamless entertainment" }
             ].map((service, index) => (
               <div key={index} className="bg-black p-8 rounded-lg hover:bg-evo-gray transition-colors">
                 <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-white mb-4">{service.name}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4" dangerouslySetInnerHTML={{__html: service.name}}></h3>
                 <p className="text-gray-400 mb-6">{service.desc}</p>
                 <Link to="/bookings" className="text-red-600 hover:text-red-400 font-bold uppercase tracking-wider">
                   Book Now →
