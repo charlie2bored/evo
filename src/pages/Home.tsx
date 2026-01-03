@@ -99,7 +99,6 @@ const Home = () => {
               { name: "DJ Services", icon: "🎧", desc: "Expert DJs with extensive music libraries keeping your party alive" },
               { name: "Videography", icon: "📹", desc: "Cinematic video production capturing every moment of your special event" },
               { name: "Social Media", icon: "📱", desc: "Strategic promotion to amplify your event's reach and engagement online" },
-              { name: "Catering", icon: "🍽️", desc: "Delicious food service with diverse menus tailored to your event's needs" },
               { name: "Full Package", icon: "✨", desc: "Complete event solutions combining all our services for seamless entertainment" }
             ].map((service, index) => (
               <div key={index} className="bg-black p-8 rounded-lg hover:bg-evo-gray transition-colors">
