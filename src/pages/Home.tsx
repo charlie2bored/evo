@@ -93,15 +93,15 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
             {[
               { name: "Performance", icon: "💃", desc: "Professional dance performances that electrify any event" },
               { name: "DJ Services", icon: "🎧", desc: "Expert DJs with extensive music libraries keeping your party alive" },
               { name: "Video<br />Graphy", icon: "📹", desc: "Cinematic video production capturing every moment of your special event" },
-              { name: "Social<br />Media", icon: "📱", desc: "Strategic promotion to amplify your event's reach and engagement online" },
-              { name: "Full Package", icon: "✨", desc: "Complete event solutions combining all our services for seamless entertainment" }
+              { name: "Social<br />Media", icon: "📱", desc: "Strategic promotion to amplify your event's reach and engagement online", gridClass: "lg:col-start-2" },
+              { name: "Full Package", icon: "✨", desc: "Complete event solutions combining all our services for seamless entertainment", gridClass: "lg:col-start-3" }
             ].map((service, index) => (
-              <div key={index} className="group bg-black p-8 rounded-lg hover:bg-white transition-colors">
+              <div key={index} className={`group bg-black p-8 rounded-lg hover:bg-white transition-colors ${service.gridClass || ''}`}>
                 <div className="text-5xl mb-4">{service.icon}</div>
                 <h3 className="text-2xl font-bold text-white group-hover:text-black mb-4" dangerouslySetInnerHTML={{__html: service.name}}></h3>
                 <p className="text-gray-400 group-hover:text-gray-800 mb-6">{service.desc}</p>
