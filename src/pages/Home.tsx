@@ -101,11 +101,11 @@ const Home = () => {
               { name: "Social Media", icon: "📱", desc: "Strategic promotion to amplify your event's reach and engagement online" },
               { name: "Full Package", icon: "✨", desc: "Complete event solutions combining all our services for seamless entertainment" }
             ].map((service, index) => (
-              <div key={index} className="bg-black p-8 rounded-lg hover:bg-white hover:text-black transition-colors">
+              <div key={index} className="group bg-black p-8 rounded-lg hover:bg-white transition-colors">
                 <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-white hover:text-black mb-4" dangerouslySetInnerHTML={{__html: service.name}}></h3>
-                <p className="text-gray-400 hover:text-gray-600 mb-6">{service.desc}</p>
-                <Link to="/bookings" className="text-red-600 hover:text-red-400 font-bold uppercase tracking-wider">
+                <h3 className="text-2xl font-bold text-white group-hover:text-black mb-4" dangerouslySetInnerHTML={{__html: service.name}}></h3>
+                <p className="text-gray-400 group-hover:text-gray-800 mb-6">{service.desc}</p>
+                <Link to="/bookings" className="text-red-600 group-hover:text-red-700 font-bold uppercase tracking-wider">
                   Book Now →
                 </Link>
               </div>
