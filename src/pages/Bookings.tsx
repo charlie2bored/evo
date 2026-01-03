@@ -44,13 +44,6 @@ const Bookings = () => {
       price: 'From $200'
     },
     {
-      id: 'catering',
-      name: 'Catering',
-      description: 'Food and beverage service',
-      icon: '🍽️',
-      price: 'From $500'
-    },
-    {
       id: 'full',
       name: 'Full Package',
       description: 'Complete entertainment solution',

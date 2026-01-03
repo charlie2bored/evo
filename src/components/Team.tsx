@@ -10,56 +10,105 @@ const Team = ({ standalone = false }: TeamProps) => {
       name: "Wiz",
       role: "Dance Director + Producer",
       credits: "Lil Uzi Vert, Tonight Show, Ciara + more",
-      image: "/images/team/member1.jpg",
+      image: "/images/team/member01.jpg",
       social: "@wizdancealot"
     },
     {
       name: "Zah",
       role: "Dancer + Choreographer",
       credits: "Coi Leray, Brooklyn Nets Halftime Show, World of Dance '24 + more",
-      image: "/images/team/member2.jpg",
+      image: "/images/team/member02.jpg",
       social: "@zah2xs"
     },
     {
       name: "Charlie2bored",
-      role: "Software Engineer + Contemporary + Hip-Hop Dancer",
+      role: "SWE + Contemporary + Hip-Hop Dancer",
       credits: "Website Development, Business of Dance + more",
-      image: "/images/team/member3.jpg",
+      image: "/images/team/member03.jpg",
       social: "@charlie2bored"
     },
     {
       name: "JBalin",
       role: "Dancer + Choreographer",
-      credits: "Raps Dance Troupe, Verse on EDT + more",
-      image: "/images/team/member4.jpg",
+      credits: "Credits Here",
+      image: "/images/team/member04.jpg",
       social: "@jonathan.balin"
     },
     {
       name: "Autumn",
-      role: "Dancer + Baking",
-      credits: "Full-Service Planning",
-      image: "/images/team/member5.jpg",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member05.jpg",
       social: "@urstruly.szn"
     },
     {
       name: "Riyaa",
-      role: "Catering Lead",
-      credits: "Model + Dancer",
-      image: "/images/team/member6.jpg",
+      role: "Event Coordinator",
+      credits: "Full-Service Event Planning",
+      image: "/images/team/member06.jpg",
       social: "@5starrr.riyaa"
     },
     {
-      name: "Team Member Name",
-      role: "Event Coordinator",
-      credits: "Full-Service Planning",
-      image: "/images/team/member7.jpg",
-      social: "@team.member7"
+      name: "Dija",
+      role: "Dancer + Choreographer",
+      credits: "Credits Here",
+      image: "/images/team/member07.jpg",
+      social: "@itspoppingdija"
     },
     {
       name: "Team Member Name",
-      role: "Event Coordinator",
-      credits: "Full-Service Planning",
-      image: "/images/team/member8.jpg",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member08.jpg",
+      social: "@team.member8"
+    },
+    {
+      name: "Team Member Name",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member09.jpg",
+      social: "@team.member8"
+    }
+    {
+      name: "Team Member Name",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member10.jpg",
+      social: "@team.member8"
+    }
+    {
+      name: "Team Member Name",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member11.jpg",
+      social: "@team.member8"
+    }
+    {
+      name: "Team Member Name",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member12.jpg",
+      social: "@team.member8"
+    }
+    {
+      name: "Team Member Name",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member13.jpg",
+      social: "@team.member8"
+    },
+    {
+      name: "Team Member Name",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member14.jpg",
+      social: "@team.member8"
+    },
+    {
+      name: "Team Member Name",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member15.jpg",
       social: "@team.member8"
     }
   ]
