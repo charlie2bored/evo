@@ -68,28 +68,28 @@ const Team = ({ standalone = false }: TeamProps) => {
       credits: "Credits Here",
       image: "/images/team/member09.jpg",
       social: "@team.member8"
-    }
+    },
     {
       name: "Team Member Name",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member10.jpg",
       social: "@team.member8"
-    }
+    },
     {
       name: "Team Member Name",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member11.jpg",
       social: "@team.member8"
-    }
+    },
     {
       name: "Team Member Name",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member12.jpg",
       social: "@team.member8"
-    }
+    },
     {
       name: "Team Member Name",
       role: "Role Here",
