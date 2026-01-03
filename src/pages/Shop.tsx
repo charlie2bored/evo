@@ -84,7 +84,7 @@ const Shop = () => {
       views: ["Front", "Back"],
       colors: ["White"],
       sizes: ["S", "M", "L", "XL", "XXL"],
-      hot: true,
+      hot: false,
       description: "Official Jersey Club Worldwide merchandise. Show your love for the culture."
     },
     {

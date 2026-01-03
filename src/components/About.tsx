@@ -54,7 +54,6 @@ const About = () => {
           <div className="order-1 lg:order-2">
             <span className="text-evo-red font-bold uppercase tracking-[0.3em] text-sm">Who We Are</span>
             <h2 className="font-impact text-5xl md:text-6xl text-white mt-4 mb-8 leading-tight">
-              A YOUNG<br />
               <span className="text-evo-red neon-red">ENTERTAINMENT</span><br />
               COMPANY
             </h2>
