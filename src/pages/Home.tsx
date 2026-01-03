@@ -103,7 +103,7 @@ const Home = () => {
             ].map((service, index) => (
               <div key={index} className="bg-black p-8 rounded-lg hover:bg-white hover:text-black transition-colors">
                 <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-white mb-4" dangerouslySetInnerHTML={{__html: service.name}}></h3>
+                <h3 className="text-2xl font-bold text-white hover:text-black mb-4" dangerouslySetInnerHTML={{__html: service.name}}></h3>
                 <p className="text-gray-400 hover:text-gray-600 mb-6">{service.desc}</p>
                 <Link to="/bookings" className="text-red-600 hover:text-red-400 font-bold uppercase tracking-wider">
                   Book Now →
