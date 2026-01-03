@@ -24,7 +24,7 @@ const Services = () => {
       features: ["4K Recording", "Drone Shots", "Same-Day Edits"]
     },
     {
-      name: "Social Media",
+      name: "Social<br />Media",
       subtitle: "Hype",
       description: "Strategic promotion to amplify your event's reach and engagement online.",
       icon: "📱",
@@ -85,8 +85,7 @@ const Services = () => {
                 </span>
 
                 {/* Title */}
-                <h3 className="font-impact text-3xl text-white mt-2 mb-4 group-hover:text-evo-red transition-colors">
-                  {service.name}
+                <h3 className="font-impact text-3xl text-white mt-2 mb-4 group-hover:text-evo-red transition-colors" dangerouslySetInnerHTML={{__html: service.name}}>
                 </h3>
 
                 {/* Description */}

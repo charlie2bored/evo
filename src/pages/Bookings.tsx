@@ -38,7 +38,7 @@ const Bookings = () => {
     },
     {
       id: 'social',
-      name: 'Social Media',
+      name: 'Social<br />Media',
       description: 'Event promotion and live coverage',
       icon: '📱',
       price: 'From $200'

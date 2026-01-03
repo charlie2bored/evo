@@ -98,7 +98,7 @@ const Home = () => {
               { name: "Performance", icon: "💃", desc: "Professional dance performances that electrify any event" },
               { name: "DJ Services", icon: "🎧", desc: "Expert DJs with extensive music libraries keeping your party alive" },
               { name: "Video<br />Graphy", icon: "📹", desc: "Cinematic video production capturing every moment of your special event" },
-              { name: "Social Media", icon: "📱", desc: "Strategic promotion to amplify your event's reach and engagement online" },
+              { name: "Social<br />Media", icon: "📱", desc: "Strategic promotion to amplify your event's reach and engagement online" },
               { name: "Full Package", icon: "✨", desc: "Complete event solutions combining all our services for seamless entertainment" }
             ].map((service, index) => (
               <div key={index} className="group bg-black p-8 rounded-lg hover:bg-white transition-colors">
