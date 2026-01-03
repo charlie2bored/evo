@@ -43,8 +43,8 @@ const Team = ({ standalone = false }: TeamProps) => {
     },
     {
       name: "Riyaa",
-      role: "Event Coordinator & Catering Lead",
-      credits: "Full-Service Event Planning & Catering",
+      role: "Role Here",
+      credits: "Credits Here",
       image: "/images/team/member6.jpg",
       social: "@5starrr.riyaa"
     },
@@ -66,8 +66,8 @@ const Team = ({ standalone = false }: TeamProps) => {
       name: "Boogz",
       role: "Role Here",
       credits: "Credits Here",
-      image: "/images/team/member09.jpg",
-      social: "@team.member8"
+      image: "/images/team/member1.jpg",
+      social: "@team.member9"
     },
     {
       name: "Bria",
