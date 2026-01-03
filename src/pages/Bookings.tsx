@@ -129,12 +129,12 @@ const Bookings = () => {
               WHAT DO YOU <span className="text-evo-red">NEED?</span>
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="flex flex-wrap justify-center gap-6 mb-12">
               {services.map((service) => (
                 <button
                   key={service.id}
                   onClick={() => toggleService(service.id)}
-                  className={`p-6 text-left transition-all ${
+                  className={`w-80 p-6 text-left transition-all ${
                     selectedServices.includes(service.id)
                       ? 'bg-evo-red neon-glow'
                       : 'bg-evo-gray hover:bg-evo-gray/80'
