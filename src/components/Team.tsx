@@ -10,35 +10,35 @@ const Team = ({ standalone = false }: TeamProps) => {
       name: "Wiz",
       role: "Dance Director + Producer",
       credits: "Lil Uzi Vert, Tonight Show, Ciara + more",
-      image: "/images/team/member01.jpg",
+      image: "/images/team/member1.jpg",
       social: "@wizdancealot"
     },
     {
       name: "Zah",
       role: "Dancer + Choreographer",
       credits: "Coi Leray, Brooklyn Nets Halftime Show, World of Dance '24 + more",
-      image: "/images/team/member02.jpg",
+      image: "/images/team/member2.jpg",
       social: "@zah2xs"
     },
     {
       name: "Charlie2bored",
       role: "SWE + Contemporary + Hip-Hop Dancer",
       credits: "Website Development, Business of Dance + more",
-      image: "/images/team/member03.jpg",
+      image: "/images/team/member3.jpg",
       social: "@charlie2bored"
     },
     {
       name: "JBalin",
       role: "Dancer + Choreographer",
       credits: "Credits Here",
-      image: "/images/team/member04.jpg",
+      image: "/images/team/member4.jpg",
       social: "@jonathan.balin"
     },
     {
       name: "Autumn",
       role: "Role Here",
       credits: "Credits Here",
-      image: "/images/team/member05.jpg",
+      image: "/images/team/member5.jpg",
       social: "@urstruly.szn"
     },
     {
@@ -52,14 +52,14 @@ const Team = ({ standalone = false }: TeamProps) => {
       name: "Dija",
       role: "Dancer + Choreographer",
       credits: "Credits Here",
-      image: "/images/team/member07.jpg",
+      image: "/images/team/member7.jpg",
       social: "@itspoppingdija"
     },
     {
       name: "Moody",
       role: "Role Here",
       credits: "Credits Here",
-      image: "/images/team/member08.jpg",
+      image: "/images/team/member8.jpg",
       social: "@team.member8"
     },
     {
