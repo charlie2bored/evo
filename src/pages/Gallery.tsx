@@ -113,11 +113,11 @@ const Gallery = () => {
         {
           id: 2,
           title: "Winter Wonderland Party",
-          date: "Dec 2023",
-          location: "Various Locations",
+          date: "November 2025",
+          location: "Neewark, NJ",
           type: "Past Event",
           image: "/images/gallery/video2.jpg",
-          url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Placeholder URL - update with actual video
+          url: "https://www.youtube.com/watch?v=DtTZtg180X4"
         }
       ])
     }
@@ -242,16 +242,26 @@ const Gallery = () => {
                   onClick={() => event.url ? setSelectedPastEvent(event) : null}
                 >
                   {/* Event Image */}
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    onError={(e) => {
-                      // Fallback if image fails to load
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<div class="absolute inset-0 flex items-center justify-center text-6xl opacity-30">📸</div>';
-                    }}
-                  />
+                  <div className="relative w-full h-full">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        // Show fallback placeholder
+                        e.currentTarget.style.opacity = '0';
+                        const placeholder = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (placeholder) placeholder.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback placeholder - hidden by default */}
+                    <div className="absolute inset-0 hidden items-center justify-center bg-gradient-to-br from-evo-gray to-gray-600">
+                      <div className="text-center text-white/60">
+                        <div className="text-4xl mb-2">🎬</div>
+                        <div className="text-sm font-medium">{event.title}</div>
+                      </div>
+                    </div>
+                  </div>
                   
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
