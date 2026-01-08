@@ -60,61 +60,59 @@ const Team = ({ standalone = false }: TeamProps) => {
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member8.jpg",
-      social: "@team.member8"
+      social: "@moodyboy.__"
     },
     {
       name: "Boogz",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member9.jpg",
-      social: "@team.member9"
+      social: "@lbjersey973_"
     },
     {
       name: "Bria",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member10.jpg",
-      social: "@team.member8"
-    },
-    {
-      name: "Greg",
-      role: "Role Here",
-      credits: "Credits Here",
-      image: "/images/team/member11.jpg",
-      social: "@team.member8"
+      social: "@bria.marie_"
     },
     {
       name: "Eboni",
       role: "Role Here",
       credits: "Credits Here",
-      image: "/images/team/member12.jpg",
-      social: "@team.member8"
+      image: "/images/team/member11.jpg",
+      social: "@eboniere"
     },
     {
       name: "Mel Mel",
+      role: "Role Here",
+      credits: "Credits Here",
+      image: "/images/team/member12.jpg",
+      social: "@malibu.mehlee"
+    },
+    {
+      name: "Sadi",
       role: "Role Here",
       credits: "Credits Here",
       image: "/images/team/member13.jpg",
       social: "@team.member8"
     },
     {
-      name: "Sadi",
-      role: "Role Here",
-      credits: "Credits Here",
-      image: "/images/team/member14.jpg",
-      social: "@team.member8"
-    },
-    {
       name: "Yaee",
       role: "Role Here",
       credits: "Credits Here",
-      image: "/images/team/member15.jpg",
-      social: "@team.member8"
+      image: "/images/team/member14.jpg",
+      social: "@yaeeee__"
     }
   ]
 
   return (
     <section id="team" className={`section-padding bg-black relative ${standalone ? 'pt-32' : ''}`}>
+      {/* DEBUG: This should show if changes are working */}
+      <div className="bg-yellow-400 text-black text-center py-4 font-bold text-xl">
+        🔧 DEBUG: Team Component Updated - {new Date().toLocaleTimeString()}
+      </div>
+
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-gradient-to-bl from-evo-red/5 to-transparent"></div>
 
