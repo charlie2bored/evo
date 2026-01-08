@@ -175,9 +175,9 @@ const SocialFeed = () => {
       {/* Social Links */}
       <div className="flex justify-center gap-6 pt-6 border-t border-white/10">
         {[
-          { name: 'Instagram', handle: '@theclanofevolution', icon: <InstagramIcon className="w-5 h-5" />, url: 'https://instagram.com/theclanofevolution' },
+          { name: 'Instagram', handle: '@teame.v.o', icon: <InstagramIcon className="w-5 h-5" />, url: 'https://www.instagram.com/teame.v.o/' },
           { name: 'TikTok', handle: '@evolve.crew', icon: <TikTokIcon className="w-5 h-5" />, url: 'https://tiktok.com/@evolve.crew' },
-          { name: 'YouTube', handle: 'Evolution TV', icon: <YouTubeIcon className="w-5 h-5" />, url: 'https://youtube.com/@evolutiontv' },
+          { name: 'YouTube', handle: 'Evolution TV', icon: <YouTubeIcon className="w-5 h-5" />, url: 'https://www.youtube.com/channel/UCV_HazGzz4M0qvsXS_CG2DA' },
         ].map((social) => (
           <a
             key={social.name}

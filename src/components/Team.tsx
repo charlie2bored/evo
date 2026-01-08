@@ -66,7 +66,7 @@ const Team = ({ standalone = false }: TeamProps) => {
       name: "Boogz",
       role: "Role Here",
       credits: "Credits Here",
-      image: "/images/team/member1.jpg",
+      image: "/images/team/member9.jpg",
       social: "@team.member9"
     },
     {
