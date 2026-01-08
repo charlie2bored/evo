@@ -108,11 +108,6 @@ const Team = ({ standalone = false }: TeamProps) => {
 
   return (
     <section id="team" className={`section-padding bg-black relative ${standalone ? 'pt-32' : ''}`}>
-      {/* DEBUG: This should show if changes are working */}
-      <div className="bg-yellow-400 text-black text-center py-4 font-bold text-xl">
-        🔧 DEBUG: Team Component Updated - {new Date().toLocaleTimeString()}
-      </div>
-
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-gradient-to-bl from-evo-red/5 to-transparent"></div>
 
