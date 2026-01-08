@@ -9,10 +9,20 @@ interface Video {
   url?: string
 }
 
+interface Event {
+  id: number
+  title: string
+  date: string
+  location: string
+  type: string
+  image: string
+  views?: string
+}
+
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('upcoming')
-  const [upcomingEvents, setUpcomingEvents] = useState([])
-  const [pastEvents, setPastEvents] = useState([])
+  const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([])
+  const [pastEvents, setPastEvents] = useState<Event[]>([])
   const [videos, setVideos] = useState<Video[]>([])
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null)
 
@@ -93,17 +103,19 @@ const Gallery = () => {
           id: 1,
           title: "Spring Break Bash",
           date: "Mar 2024",
-          location: "",
-          type: "",
-          image: "/images/gallery/video1.jpg"
+          location: "Various Locations",
+          type: "Past Event",
+          image: "/images/gallery/video1.jpg",
+          views: "50K"
         },
         {
           id: 2,
           title: "Winter Wonderland Party",
           date: "Dec 2023",
-          location: "",
-          type: "",
-          image: "/images/gallery/video2.jpg"
+          location: "Various Locations",
+          type: "Past Event",
+          image: "/images/gallery/video2.jpg",
+          views: "35K"
         }
       ])
     }
