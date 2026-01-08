@@ -114,7 +114,7 @@ const Gallery = () => {
           id: 2,
           title: "Winter Wonderland Party",
           date: "November 2025",
-          location: "Neewark, NJ",
+          location: "Newark, NJ",
           type: "Past Event",
           image: "/images/gallery/video2.jpg",
           url: "https://www.youtube.com/watch?v=DtTZtg180X4"
@@ -268,14 +268,10 @@ const Gallery = () => {
                   
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex justify-between items-end">
-                      <div>
-                        <span className="text-evo-red text-xs uppercase tracking-wider">{event.date}</span>
-                        <h3 className="font-impact text-2xl text-white mt-1">{event.title}</h3>
-                      </div>
-                      <div className="text-white/40 text-sm">
-                        {event.views} views
-                      </div>
+                    <div>
+                      <span className="text-evo-red text-xs uppercase tracking-wider">{event.date}</span>
+                      <h3 className="font-impact text-2xl text-white mt-1">{event.title}</h3>
+                      <p className="text-white/40 text-sm mt-1">{event.location}</p>
                     </div>
                   </div>
 
