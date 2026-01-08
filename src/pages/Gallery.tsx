@@ -108,7 +108,6 @@ const Gallery = () => {
           location: "New York, NY",
           type: "Past Event",
           image: "/images/gallery/video1.jpg",
-          views: "50K",
           url: "https://www.youtube.com/watch?v=Y9Z4WkiJeUs" 
         },
         {
@@ -118,7 +117,6 @@ const Gallery = () => {
           location: "Various Locations",
           type: "Past Event",
           image: "/images/gallery/video2.jpg",
-          views: "35K",
           url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Placeholder URL - update with actual video
         }
       ])
