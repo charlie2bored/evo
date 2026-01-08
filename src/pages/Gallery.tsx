@@ -28,7 +28,7 @@ const Gallery = () => {
         {
           id: 1,
           title: "NBA Halftime Show",
-          date: "Jan 9, 2026",
+          date: "Jan 9 2026",
           location: "Brooklyn, NY",
           type: "NBA Game",
           image: "/images/gallery/event1.jpg"
@@ -36,7 +36,7 @@ const Gallery = () => {
         {
           id: 2,
           title: "Project Becoming",
-          date: "Jan 10, 2026",
+          date: "Jan 10 2026",
           location: "Newark, NJ",
           type: "Gala",
           image: "/images/gallery/event2.jpg"
@@ -44,7 +44,7 @@ const Gallery = () => {
         {
           id: 3,
           title: "ClubNYC",
-          date: "Feb 15, 2025",
+          date: "Feb 15 2025",
           location: "Brooklyn, NY",
           type: "Club Night",
           image: "/images/gallery/event3.jpg"
