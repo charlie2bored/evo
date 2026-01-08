@@ -1,5 +1,4 @@
 // Icon components to replace emojis throughout the site
-import React from 'react'
 
 export const DanceIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">

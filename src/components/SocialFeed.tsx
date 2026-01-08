@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ReactElement } from 'react'
 import { InstagramIcon, YouTubeIcon, TikTokIcon } from './Icons'
 
 interface SocialPost {
@@ -6,7 +6,7 @@ interface SocialPost {
   platform: 'instagram' | 'youtube' | 'tiktok'
   type: 'image' | 'video'
   content: string
-  thumbnail: string
+  thumbnail: ReactElement
   url: string
   likes?: number
   views?: number
