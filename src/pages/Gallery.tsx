@@ -247,15 +247,23 @@ const Gallery = () => {
                       src={event.image}
                       alt={event.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      onError={(e) => {
+                      onLoad={() => {
+                        // Image loaded successfully - hide fallback
+                        const placeholder = document.querySelector(`[data-event-id="${event.id}"] .image-fallback`);
+                        if (placeholder) (placeholder as HTMLElement).style.display = 'none';
+                      }}
+                      onError={() => {
+                        console.log('Image failed to load:', event.image, event.title);
                         // Show fallback placeholder
-                        e.currentTarget.style.opacity = '0';
-                        const placeholder = e.currentTarget.nextElementSibling as HTMLElement;
-                        if (placeholder) placeholder.style.display = 'flex';
+                        const placeholder = document.querySelector(`[data-event-id="${event.id}"] .image-fallback`);
+                        if (placeholder) (placeholder as HTMLElement).style.display = 'flex';
                       }}
                     />
                     {/* Fallback placeholder - hidden by default */}
-                    <div className="absolute inset-0 hidden items-center justify-center bg-gradient-to-br from-evo-gray to-gray-600">
+                    <div
+                      className="image-fallback absolute inset-0 hidden items-center justify-center bg-gradient-to-br from-evo-gray to-gray-600"
+                      data-event-id={event.id}
+                    >
                       <div className="text-center text-white/60">
                         <div className="text-4xl mb-2">🎬</div>
                         <div className="text-sm font-medium">{event.title}</div>
