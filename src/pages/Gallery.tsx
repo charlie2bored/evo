@@ -101,12 +101,11 @@ const Gallery = () => {
       setPastEvents([
         {
           id: 1,
-          title: "Spring Break Bash",
-          date: "Mar 2024",
-          location: "Various Locations",
+          title: "Sybarite Love is Love Festival 2025",
+          date: "December 2025",
+          location: "New York, NY",
           type: "Past Event",
           image: "/images/gallery/video1.jpg",
-          views: "50K"
         },
         {
           id: 2,
@@ -115,7 +114,6 @@ const Gallery = () => {
           location: "Various Locations",
           type: "Past Event",
           image: "/images/gallery/video2.jpg",
-          views: "35K"
         }
       ])
     }
