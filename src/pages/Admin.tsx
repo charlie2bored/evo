@@ -15,6 +15,7 @@ interface Video {
   title: string
   duration: string
   views: string
+  url?: string
 }
 
 const Admin = () => {
@@ -41,7 +42,8 @@ const Admin = () => {
   const [videoForm, setVideoForm] = useState({
     title: '',
     duration: '',
-    views: ''
+    views: '',
+    url: ''
   })
 
   // Load data from localStorage on component mount
@@ -111,10 +113,10 @@ const Admin = () => {
     } else {
       // Load default videos
       setVideos([
-        { id: 1, title: "Summer Shutdown Recap", duration: "3:45", views: "25K" },
-        { id: 2, title: "Behind The Scenes: Jersey Club Night", duration: "5:20", views: "18K" },
-        { id: 3, title: "Dance Crew Rehearsal", duration: "2:30", views: "12K" },
-        { id: 4, title: "Event Highlights Reel", duration: "4:15", views: "30K" }
+        { id: 1, title: "Summer Shutdown Recap", duration: "3:45", views: "25K", url: "" },
+        { id: 2, title: "Behind The Scenes: Jersey Club Night", duration: "5:20", views: "18K", url: "" },
+        { id: 3, title: "Dance Crew Rehearsal", duration: "2:30", views: "12K", url: "" },
+        { id: 4, title: "Event Highlights Reel", duration: "4:15", views: "30K", url: "" }
       ])
     }
   }, [])
@@ -188,7 +190,8 @@ const Admin = () => {
     setVideoForm({
       title: '',
       duration: '',
-      views: ''
+      views: '',
+      url: ''
     })
   }
 
@@ -399,7 +402,7 @@ const Admin = () => {
             {/* Add Video Form */}
             <div className="bg-evo-gray p-8 rounded-lg">
               <h3 className="text-xl font-bold text-white mb-6">Add New Video</h3>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-white text-sm font-bold uppercase tracking-wider mb-2">Title</label>
                   <input
@@ -408,6 +411,16 @@ const Admin = () => {
                     onChange={(e) => setVideoForm({...videoForm, title: e.target.value})}
                     className="w-full bg-black border border-white/20 px-4 py-3 text-white focus:outline-none focus:border-evo-red"
                     placeholder="Video title"
+                  />
+                </div>
+                <div>
+                  <label className="block text-white text-sm font-bold uppercase tracking-wider mb-2">Video URL (Optional)</label>
+                  <input
+                    type="url"
+                    value={videoForm.url}
+                    onChange={(e) => setVideoForm({...videoForm, url: e.target.value})}
+                    className="w-full bg-black border border-white/20 px-4 py-3 text-white focus:outline-none focus:border-evo-red"
+                    placeholder="https://youtube.com/watch?v=..."
                   />
                 </div>
                 <div>
@@ -445,8 +458,16 @@ const Admin = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {videos.map((video) => (
                   <div key={video.id} className="bg-evo-gray p-6 rounded-lg">
-                    <h4 className="text-white font-bold mb-2">{video.title}</h4>
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-white font-bold">{video.title}</h4>
+                      {video.url && <span className="text-evo-red text-xs">🎬 EMBED</span>}
+                    </div>
                     <p className="text-white/60 text-sm mb-4">{video.duration} • {video.views} views</p>
+                    {video.url && (
+                      <p className="text-white/40 text-xs mb-2 truncate" title={video.url}>
+                        URL: {video.url}
+                      </p>
+                    )}
                     <button
                       onClick={() => deleteVideo(video.id)}
                       className="bg-red-600 text-white px-4 py-2 font-bold uppercase tracking-wider hover:bg-red-700 transition-colors"

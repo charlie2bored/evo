@@ -1,11 +1,52 @@
 import { useState, useEffect } from 'react'
 import { VideoIcon } from '../components/Icons'
 
+interface Video {
+  id: number
+  title: string
+  duration: string
+  views: string
+  url?: string
+}
+
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('upcoming')
   const [upcomingEvents, setUpcomingEvents] = useState([])
   const [pastEvents, setPastEvents] = useState([])
-  const [videos, setVideos] = useState([])
+  const [videos, setVideos] = useState<Video[]>([])
+  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null)
+
+  // Function to extract video ID from URL
+  const extractVideoId = (url: string) => {
+    if (!url) return null
+
+    // YouTube patterns
+    const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
+    const youtubeMatch = url.match(youtubeRegex)
+    if (youtubeMatch) return { platform: 'youtube', id: youtubeMatch[1] }
+
+    // Vimeo patterns
+    const vimeoRegex = /vimeo\.com\/(\d+)/
+    const vimeoMatch = url.match(vimeoRegex)
+    if (vimeoMatch) return { platform: 'vimeo', id: vimeoMatch[1] }
+
+    return null
+  }
+
+  // Function to get embed URL
+  const getEmbedUrl = (video: Video) => {
+    if (!video.url) return null
+    const videoInfo = extractVideoId(video.url)
+    if (!videoInfo) return null
+
+    if (videoInfo.platform === 'youtube') {
+      return `https://www.youtube.com/embed/${videoInfo.id}`
+    } else if (videoInfo.platform === 'vimeo') {
+      return `https://player.vimeo.com/video/${videoInfo.id}`
+    }
+
+    return null
+  }
 
   // Load data from localStorage or use defaults
   useEffect(() => {
@@ -71,10 +112,10 @@ const Gallery = () => {
       setVideos(JSON.parse(savedVideos))
     } else {
       setVideos([
-        { id: 1, title: "Summer Shutdown Recap", duration: "3:45", views: "25K" },
-        { id: 2, title: "Behind The Scenes: Jersey Club Night", duration: "5:20", views: "18K" },
-        { id: 3, title: "Dance Crew Rehearsal", duration: "2:30", views: "12K" },
-        { id: 4, title: "Event Highlights Reel", duration: "4:15", views: "30K" }
+        { id: 1, title: "Summer Shutdown Recap", duration: "3:45", views: "25K", url: "" },
+        { id: 2, title: "Behind The Scenes: Jersey Club Night", duration: "5:20", views: "18K", url: "" },
+        { id: 3, title: "Dance Crew Rehearsal", duration: "2:30", views: "12K", url: "" },
+        { id: 4, title: "Event Highlights Reel", duration: "4:15", views: "30K", url: "" }
       ])
     }
   }, [])
@@ -222,22 +263,30 @@ const Gallery = () => {
       {activeTab === 'videos' && (
         <section className="section-padding">
           <div className="container-max">
-            {/* Featured Video */}
-            <div className="aspect-video bg-evo-gray mb-8 relative overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <VideoIcon className="text-6xl opacity-30" />
-                  <p className="text-white/40 mt-4">Featured Video Player</p>
+            {/* Selected Video Player */}
+            {selectedVideo && getEmbedUrl(selectedVideo) && (
+              <div className="mb-8">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-2xl font-bold text-white">{selectedVideo.title}</h3>
+                  <button
+                    onClick={() => setSelectedVideo(null)}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    ✕ Close
+                  </button>
+                </div>
+                <div className="aspect-video bg-black rounded-lg overflow-hidden">
+                  <iframe
+                    src={getEmbedUrl(selectedVideo)!}
+                    title={selectedVideo.title}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-evo-red rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform neon-glow">
-                  <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
+            )}
 
             {/* Video Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -245,6 +294,7 @@ const Gallery = () => {
                 <div
                   key={video.id}
                   className="group cursor-pointer"
+                  onClick={() => video.url ? setSelectedVideo(video) : null}
                 >
                   <div className="aspect-video bg-evo-gray mb-3 relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity">
@@ -253,15 +303,20 @@ const Gallery = () => {
                     <div className="absolute bottom-2 right-2 bg-black/80 px-2 py-1 text-xs text-white">
                       {video.duration}
                     </div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-12 h-12 bg-evo-red rounded-full flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
+                    {video.url && (
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="w-12 h-12 bg-evo-red rounded-full flex items-center justify-center">
+                          <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
-                  <h4 className="text-white font-bold text-sm group-hover:text-evo-red transition-colors">{video.title}</h4>
+                  <h4 className="text-white font-bold text-sm group-hover:text-evo-red transition-colors">
+                    {video.title}
+                    {video.url && <span className="text-evo-red ml-1">▶</span>}
+                  </h4>
                   <p className="text-white/40 text-xs mt-1">{video.views} views</p>
                 </div>
               ))}
