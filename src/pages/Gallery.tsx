@@ -182,7 +182,8 @@ const Gallery = () => {
               {pastEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="group relative aspect-video bg-evo-gray overflow-hidden"
+                  className="group relative aspect-video bg-evo-gray overflow-hidden cursor-pointer"
+                  onClick={() => event.url && window.open(event.url, '_blank')}
                 >
                   {/* Event Image */}
                   <div className="relative w-full h-full">
@@ -226,7 +227,7 @@ const Gallery = () => {
                     </div>
                   </div>
 
-                  {/* Play Button - only show if event has video URL */}
+                  {/* Play Button - show on hover if event has video URL */}
                   {event.url && (
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <div className="w-16 h-16 bg-evo-red rounded-full flex items-center justify-center neon-glow">
