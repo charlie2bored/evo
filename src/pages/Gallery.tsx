@@ -1,73 +1,83 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { VideoIcon } from '../components/Icons'
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('upcoming')
+  const [upcomingEvents, setUpcomingEvents] = useState([])
+  const [pastEvents, setPastEvents] = useState([])
+  const [videos, setVideos] = useState([])
 
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Summer Shutdown 2024",
-      date: "Aug 15, 2024",
-      location: "Newark, NJ",
-      type: "Party",
-      image: "/images/gallery/event1.jpg"
-    },
-    {
-      id: 2,
-      title: "Jersey Club Night",
-      date: "Aug 22, 2024",
-      location: "Brooklyn, NY",
-      type: "Club Night",
-      image: "/images/gallery/event2.jpg"
-    },
-    {
-      id: 3,
-      title: "Culture Fest",
-      date: "Sep 5, 2024",
-      location: "Philadelphia, PA",
-      type: "Festival",
-      image: "/images/gallery/event3.jpg"
+  // Load data from localStorage or use defaults
+  useEffect(() => {
+    const savedUpcoming = localStorage.getItem('upcomingEvents')
+    const savedPast = localStorage.getItem('pastEvents')
+    const savedVideos = localStorage.getItem('videos')
+
+    if (savedUpcoming) {
+      setUpcomingEvents(JSON.parse(savedUpcoming))
+    } else {
+      setUpcomingEvents([
+        {
+          id: 1,
+          title: "Summer Shutdown 2024",
+          date: "Aug 15, 2024",
+          location: "Newark, NJ",
+          type: "Party",
+          image: "/images/gallery/event1.jpg"
+        },
+        {
+          id: 2,
+          title: "Jersey Club Night",
+          date: "Aug 22, 2024",
+          location: "Brooklyn, NY",
+          type: "Club Night",
+          image: "/images/gallery/event2.jpg"
+        },
+        {
+          id: 3,
+          title: "Culture Fest",
+          date: "Sep 5, 2024",
+          location: "Philadelphia, PA",
+          type: "Festival",
+          image: "/images/gallery/event3.jpg"
+        }
+      ])
     }
-  ]
 
-  const pastEvents = [
-    {
-      id: 1,
-      title: "Spring Break Bash",
-      date: "Mar 2024",
-      views: "50K",
-      image: "/images/gallery/video1.jpg"
-    },
-    {
-      id: 2,
-      title: "Winter Wonderland Party",
-      date: "Dec 2023",
-      views: "35K",
-      image: "/images/gallery/video2.jpg"
-    },
-    {
-      id: 3,
-      title: "Halloween Takeover",
-      date: "Oct 2023",
-      views: "45K",
-      image: "/images/gallery/video3.jpg"
-    },
-    {
-      id: 4,
-      title: "Summer Vibes 2023",
-      date: "Jul 2023",
-      views: "60K",
-      image: "/images/gallery/video4.jpg"
+    if (savedPast) {
+      setPastEvents(JSON.parse(savedPast))
+    } else {
+      setPastEvents([
+        {
+          id: 1,
+          title: "Spring Break Bash",
+          date: "Mar 2024",
+          location: "",
+          type: "",
+          image: "/images/gallery/video1.jpg"
+        },
+        {
+          id: 2,
+          title: "Winter Wonderland Party",
+          date: "Dec 2023",
+          location: "",
+          type: "",
+          image: "/images/gallery/video2.jpg"
+        }
+      ])
     }
-  ]
 
-  const videos = [
-    { id: 1, title: "Summer Shutdown Recap", duration: "3:45", views: "25K" },
-    { id: 2, title: "Behind The Scenes: Jersey Club Night", duration: "5:20", views: "18K" },
-    { id: 3, title: "Dance Crew Rehearsal", duration: "2:30", views: "12K" },
-    { id: 4, title: "Event Highlights Reel", duration: "4:15", views: "30K" },
-  ]
+    if (savedVideos) {
+      setVideos(JSON.parse(savedVideos))
+    } else {
+      setVideos([
+        { id: 1, title: "Summer Shutdown Recap", duration: "3:45", views: "25K" },
+        { id: 2, title: "Behind The Scenes: Jersey Club Night", duration: "5:20", views: "18K" },
+        { id: 3, title: "Dance Crew Rehearsal", duration: "2:30", views: "12K" },
+        { id: 4, title: "Event Highlights Reel", duration: "4:15", views: "30K" }
+      ])
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-black pt-24">

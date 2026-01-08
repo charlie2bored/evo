@@ -7,6 +7,7 @@ import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 import Gallery from './pages/Gallery'
 import Bookings from './pages/Bookings'
+import Admin from './pages/Admin'
 import Footer from './components/Footer'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/bookings" element={<Bookings />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
           <Footer />
         </div>
