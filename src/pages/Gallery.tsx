@@ -17,6 +17,7 @@ interface Event {
   type: string
   image: string
   views?: string
+  url?: string
 }
 
 const Gallery = () => {
@@ -25,6 +26,7 @@ const Gallery = () => {
   const [pastEvents, setPastEvents] = useState<Event[]>([])
   const [videos, setVideos] = useState<Video[]>([])
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null)
+  const [selectedPastEvent, setSelectedPastEvent] = useState<Event | null>(null)
 
   // Function to extract video ID from URL
   const extractVideoId = (url: string) => {
@@ -44,9 +46,9 @@ const Gallery = () => {
   }
 
   // Function to get embed URL
-  const getEmbedUrl = (video: Video) => {
-    if (!video.url) return null
-    const videoInfo = extractVideoId(video.url)
+  const getEmbedUrl = (item: { url?: string }) => {
+    if (!item.url) return null
+    const videoInfo = extractVideoId(item.url)
     if (!videoInfo) return null
 
     if (videoInfo.platform === 'youtube') {
@@ -106,6 +108,8 @@ const Gallery = () => {
           location: "New York, NY",
           type: "Past Event",
           image: "/images/gallery/video1.jpg",
+          views: "50K",
+          url: "https://www.youtube.com/watch?v=Y9Z4WkiJeUs" 
         },
         {
           id: 2,
@@ -114,6 +118,8 @@ const Gallery = () => {
           location: "Various Locations",
           type: "Past Event",
           image: "/images/gallery/video2.jpg",
+          views: "35K",
+          url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Placeholder URL - update with actual video
         }
       ])
     }
@@ -232,11 +238,22 @@ const Gallery = () => {
           <div className="container-max">
             <div className="grid md:grid-cols-2 gap-6">
               {pastEvents.map((event) => (
-                <div key={event.id} className="group relative aspect-video bg-evo-gray overflow-hidden cursor-pointer">
-                  {/* Image Placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">
-                    {event.image}
-                  </div>
+                <div
+                  key={event.id}
+                  className="group relative aspect-video bg-evo-gray overflow-hidden cursor-pointer"
+                  onClick={() => event.url ? setSelectedPastEvent(event) : null}
+                >
+                  {/* Event Image */}
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      // Fallback if image fails to load
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.parentElement!.innerHTML = '<div class="absolute inset-0 flex items-center justify-center text-6xl opacity-30">📸</div>';
+                    }}
+                  />
                   
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
@@ -254,14 +271,16 @@ const Gallery = () => {
                     </div>
                   </div>
 
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-16 h-16 bg-evo-red rounded-full flex items-center justify-center neon-glow">
-                      <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
+                  {/* Play Button - only show if event has video URL */}
+                  {event.url && (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="w-16 h-16 bg-evo-red rounded-full flex items-center justify-center neon-glow">
+                        <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -289,6 +308,31 @@ const Gallery = () => {
                   <iframe
                     src={getEmbedUrl(selectedVideo)!}
                     title={selectedVideo.title}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            )}
+
+            {/* Selected Past Event Player */}
+            {selectedPastEvent && getEmbedUrl(selectedPastEvent) && (
+              <div className="mb-8">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-2xl font-bold text-white">{selectedPastEvent.title}</h3>
+                  <button
+                    onClick={() => setSelectedPastEvent(null)}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    ✕ Close
+                  </button>
+                </div>
+                <div className="aspect-video bg-black rounded-lg overflow-hidden">
+                  <iframe
+                    src={getEmbedUrl(selectedPastEvent)!}
+                    title={selectedPastEvent.title}
                     className="w-full h-full"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
